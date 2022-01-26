@@ -30,7 +30,7 @@ namespace Avtomivka.A.Migrations
                     b.Property<bool>("Delete")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("Modified")
+                    b.Property<DateTime>("Modified_17118057")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Operation")
@@ -43,7 +43,7 @@ namespace Avtomivka.A.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Logs");
+                    b.ToTable("log_17118057", "17118057");
                 });
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.Program", b =>
@@ -61,7 +61,7 @@ namespace Avtomivka.A.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Modified")
+                    b.Property<DateTime>("Modified_17118057")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -79,7 +79,7 @@ namespace Avtomivka.A.Migrations
 
                     b.HasIndex("WorkerId");
 
-                    b.ToTable("Programs");
+                    b.ToTable("Program", "17118057");
                 });
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.Site", b =>
@@ -99,7 +99,7 @@ namespace Avtomivka.A.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Modified")
+                    b.Property<DateTime>("Modified_17118057")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -110,7 +110,7 @@ namespace Avtomivka.A.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sites");
+                    b.ToTable("Site", "17118057");
                 });
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.WashReservation", b =>
@@ -124,7 +124,7 @@ namespace Avtomivka.A.Migrations
                     b.Property<bool>("Delete")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("Modified")
+                    b.Property<DateTime>("Modified_17118057")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ProgramId")
@@ -146,7 +146,7 @@ namespace Avtomivka.A.Migrations
 
                     b.HasIndex("SiteId");
 
-                    b.ToTable("WashReservations");
+                    b.ToTable("WashReservation", "17118057");
                 });
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.Worker", b =>
@@ -170,7 +170,7 @@ namespace Avtomivka.A.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Modified")
+                    b.Property<DateTime>("Modified_17118057")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -179,7 +179,7 @@ namespace Avtomivka.A.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Worker");
+                    b.ToTable("Worker", "17118057");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

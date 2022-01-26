@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Avtomivka.A.Data.Models
 {
+    [Table(name: "Program", Schema = "17118057")]
     public class Program : BaseModel
     {
         [Required]

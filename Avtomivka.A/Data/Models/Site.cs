@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Avtomivka.A.Data.Models
 {
+    [Table(name: "Site", Schema = "17118057")]
     public class Site : BaseModel
     {
         public string Name { get; set; }

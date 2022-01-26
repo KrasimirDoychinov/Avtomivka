@@ -26,6 +26,8 @@ namespace Avtomivka.A.Data
 
         public DbSet<WashReservation> WashReservations { get; set; }
 
+        public DbSet<Worker> Workers { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
