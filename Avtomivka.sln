@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avtomivka", "Avtomivka\Avtomivka.csproj", "{DE4B9DBE-351C-4CBD-A09D-9A6A0F705A56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avtomivka.A", "Avtomivka.A\Avtomivka.A.csproj", "{1972CC2E-03E8-487B-BBD7-F6DC95589E6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE4B9DBE-351C-4CBD-A09D-9A6A0F705A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE4B9DBE-351C-4CBD-A09D-9A6A0F705A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE4B9DBE-351C-4CBD-A09D-9A6A0F705A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE4B9DBE-351C-4CBD-A09D-9A6A0F705A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1972CC2E-03E8-487B-BBD7-F6DC95589E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1972CC2E-03E8-487B-BBD7-F6DC95589E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1972CC2E-03E8-487B-BBD7-F6DC95589E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1972CC2E-03E8-487B-BBD7-F6DC95589E6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
