@@ -40,8 +40,15 @@ using Avtomivka.A.Models.View;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
+using Avtomivka.A.Models.Input;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68073c59f9a7fa8680f3549f1382508ea648f88b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"41dbf37169bb358580903f060665baac363e1488", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

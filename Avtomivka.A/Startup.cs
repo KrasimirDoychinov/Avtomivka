@@ -48,6 +48,7 @@ namespace Avtomivka.A
             services.AddTransient<ISiteServices, SiteServices>();
             services.AddTransient<IWashReservationServices, WashReservationServices>();
             services.AddTransient<IWorkerServices, WorkerServices>();
+            services.AddTransient<IColonServices, ColonServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

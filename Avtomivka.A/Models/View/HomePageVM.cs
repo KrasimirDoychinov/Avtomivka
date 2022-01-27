@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Avtomivka.A.Models.View
 {
-    public class HomePageVM
+    public class HomePageVM : BaseVM
     {
         public IEnumerable<Site> Sites { get; set; }
 

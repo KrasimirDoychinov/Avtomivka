@@ -8,14 +8,10 @@ using System.Threading.Tasks;
 
 namespace Avtomivka.A.Logic
 {
-    public class LogServices : ILogServices
+    public class LogServices :  ILogServices
     {
         private readonly ApplicationDbContext context;
 
-        public LogServices(ApplicationDbContext context)
-        {
-            this.context = context;
-        }
 
         public async Task Log(string table, string operation)
         {

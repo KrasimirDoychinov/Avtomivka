@@ -21,14 +21,13 @@ namespace Avtomivka.A.Logic
 
         public static void Sites(ApplicationDbContext context)
         {
-            DateTime closeTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour + 8, 0, 0);
             if (context.Sites.Count() <= 0)
             {
                 context.Sites.AddRange(new Site[]
                 {
-                    new Site {Name = "Site1", Description = "Site1 description", OpenTime = DateTime.Now, CloseTime = closeTime},
-                    new Site {Name = "Site2", Description = "Site2 description", OpenTime = DateTime.Now, CloseTime = closeTime},
-                    new Site {Name = "Site3", Description = "Site3 description", OpenTime = DateTime.Now, CloseTime = closeTime},
+                    new Site {Name = "Hadji Dimitar", Description = "Hadji Dimitar description", OpenTime = new DateTime(2022, 12, 10, 8, 0, 0), CloseTime = new DateTime(2022, 12, 10, 16, 0, 0)},
+                    new Site {Name = "Drujba 1", Description = "Drujba 1 description", OpenTime = new DateTime(2022, 12, 10, 9, 0, 0), CloseTime = new DateTime(2022, 12, 10, 17, 0, 0)},
+                    new Site {Name = "Drujba 2", Description = "Drujba 2 description", OpenTime = new DateTime(2022, 12, 10, 10, 0, 0), CloseTime = new DateTime(2022, 12, 10, 18, 0, 0)},
                 });
             }
 
@@ -41,9 +40,9 @@ namespace Avtomivka.A.Logic
             {
                 context.Workers.AddRange(new Worker[]
                 {
-                    new Worker{Id = "1", Name = "Gosho", Age = 30, Description = "Gosho description", Image = "default.png"},
-                    new Worker{Id = "2", Name = "Pesho", Age = 20, Description = "Pesho description", Image = "default.png"},
-                    new Worker{Id = "3", Name = "Tosho", Age = 40, Description = "Tosho description", Image = "default.png"},
+                    new Worker{Id = "1", Name = "Gosho", Age = 30, Description = "Gosho description", Image = "default1.png"},
+                    new Worker{Id = "2", Name = "Pesho", Age = 20, Description = "Pesho description", Image = "default2.png"},
+                    new Worker{Id = "3", Name = "Tosho", Age = 40, Description = "Tosho description", Image = "default3.png"},
                 });
             }
 

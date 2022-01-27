@@ -4,25 +4,48 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2 class="display-4">Welcome to <span class="font-weight-bold">CHISTACHITE</span></h2>
 </div>
 
-<div class="row">
-    <div class="col-2 ">
-        @if (Model.Sites.Count() > 0)
+<div class="row text-center align-items-center justify-content-center">
+    @if (Model.Colons.Count() > 0)
+    {
+        foreach (var item in Model.Colons)
         {
-            foreach (var item in Model.Sites)
             {
+                var boxClass = item.Taken ? "box-taken" : "box";
+                if (boxClass == "box")
+                {
+                    <a class="col-3 @boxClass text-decoration-none" 
+                       asp-area="" asp-controller="WashReservation" asp-action="Create" asp-route-colonId="@item.Id">
+                        <h3>@item.Number</h3>
+                    </a>
+                }
+                else
+                {
+                    <div class="col-3 @boxClass">
+                        <h3>@item.Number</h3>
+                    </div>
+                }
+
+            }
+        }
+    }
+</div>
+
+<hr class="bg-dark" />
+<div class="row mt-5">
+    @if (Model.Sites.Count() > 0)
+    {
+
+        foreach (var item in Model.Sites)
+        {
+            <div class="col-4">
                 <h3>@item.Name</h3>
                 <h4>@item.Description</h4>
                 <h4>@item.OpenTime</h4>
                 <h4>@item.CloseTime</h4>
-            }
+            </div>
         }
-    </div>
-    <div class="col-3 box"></div>
-    <div class="col-3 box"></div>
-    <div class="col-3 box"></div>
-    <div class="col-3 box-taken"></div>
+    }
 </div>

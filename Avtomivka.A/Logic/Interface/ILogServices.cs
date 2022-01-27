@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Avtomivka.A.Logic.Interface
 {
-    public interface ILogServices : IBaseServices<Log>
+    public interface ILogServices
     {
         Task Log(string table, string operation);
     }

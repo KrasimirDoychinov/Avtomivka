@@ -15,18 +15,21 @@ namespace Avtomivka.A.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ISiteServices siteServices;
+        private readonly IColonServices colonServices;
 
-        public HomeController(ILogger<HomeController> logger, ISiteServices siteServices)
+        public HomeController(ILogger<HomeController> logger, ISiteServices siteServices, IColonServices colonServices)
         {
             _logger = logger;
             this.siteServices = siteServices;
+            this.colonServices = colonServices;
         }
 
         public IActionResult Index()
         {
             var vm = new HomePageVM
             {
-                Sites = this.siteServices.All()
+                Sites = this.siteServices.All(),
+                Colons = this.colonServices.All().OrderBy(x => x.Number)
             };
 
             return View(vm);

@@ -1,14 +1,20 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+img{
+    height: 200px;
+    width: 200px;
+}
 .box, .box-taken {
     height: 150px;
     margin: 5px;
+    color: white;
 }
 
     .box:hover {
         transition: all .2s ease-in;
         background: gray;
+        color: black;
     }
 
 

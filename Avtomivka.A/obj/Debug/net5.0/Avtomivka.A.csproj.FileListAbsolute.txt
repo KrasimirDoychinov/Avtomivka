@@ -395,3 +395,4 @@ C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\ru\Microsoft.C
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Views\WashReservation\Create.cshtml.g.cs
