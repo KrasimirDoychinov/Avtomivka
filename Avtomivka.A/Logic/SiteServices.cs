@@ -20,7 +20,7 @@ namespace Avtomivka.A.Logic
             this.context = context;
             this.logServices = logServices;
         }
-
+        
         public async Task Create(string name, string description,
             DateTime openTime, DateTime closeTime)
         {

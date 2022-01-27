@@ -8,7 +8,7 @@ namespace Avtomivka.A.Logic
 {
     public static class Seeder
     {
-        
+
         public static void Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
         {
             Roles(roleManager);
@@ -16,6 +16,7 @@ namespace Avtomivka.A.Logic
             Sites(context);
             Workers(context);
             Programs(context);
+            Colons(context);
         }
 
         public static void Sites(ApplicationDbContext context)
@@ -60,8 +61,28 @@ namespace Avtomivka.A.Logic
                     new Data.Models.Program{Name = "Program3", Description = "Program3 description", Price = 40, WorkerId = "3"},
                 });
             }
+            context.SaveChanges();
         }
 
+        public static void Colons(ApplicationDbContext context)
+        {
+            if (context.Colons.Count() <= 0)
+            {
+                context.Colons.AddRange(new Colon[]
+                {
+                    new Colon{Number = 1},
+                    new Colon{Number = 2},
+                    new Colon{Number = 3},
+                    new Colon{Number = 4},
+                    new Colon{Number = 5},
+                    new Colon{Number = 6},
+                    new Colon{Number = 7},
+                    new Colon{Number = 8},
+                    new Colon{Number = 9},
+                });
+            }
+            context.SaveChanges();
+        }
         public static void Users(UserManager<User> userManager)
         {
             if (userManager.FindByNameAsync("User1@gmail.com").Result == null)

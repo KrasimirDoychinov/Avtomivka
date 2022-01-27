@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Avtomivka.A.Logic.Interface
 {
-    public interface IProgramServices
+    public interface IProgramServices : IBaseServices<Data.Models.Program>
     {
         Task Create(string name, double price,
             string description, string workerId);

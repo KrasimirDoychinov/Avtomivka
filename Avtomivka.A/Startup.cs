@@ -1,6 +1,7 @@
 using Avtomivka.A.Data;
 using Avtomivka.A.Data.Models;
 using Avtomivka.A.Logic;
+using Avtomivka.A.Logic.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,9 @@ namespace Avtomivka.A
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -38,6 +42,12 @@ namespace Avtomivka.A
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddTransient<ILogServices, LogServices>();
+            services.AddTransient<IProgramServices, ProgramServices>();
+            services.AddTransient<ISiteServices, SiteServices>();
+            services.AddTransient<IWashReservationServices, WashReservationServices>();
+            services.AddTransient<IWorkerServices, WorkerServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

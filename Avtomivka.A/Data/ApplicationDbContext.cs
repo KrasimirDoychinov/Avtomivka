@@ -28,6 +28,7 @@ namespace Avtomivka.A.Data
 
         public DbSet<Worker> Workers { get; set; }
 
+        public DbSet<Colon> Colons { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

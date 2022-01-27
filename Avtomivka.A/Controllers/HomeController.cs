@@ -1,4 +1,6 @@
-﻿using Avtomivka.A.Models;
+﻿using Avtomivka.A.Logic.Interface;
+using Avtomivka.A.Models;
+using Avtomivka.A.Models.View;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +14,22 @@ namespace Avtomivka.A.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ISiteServices siteServices;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ISiteServices siteServices)
         {
             _logger = logger;
+            this.siteServices = siteServices;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var vm = new HomePageVM
+            {
+                Sites = this.siteServices.All()
+            };
+
+            return View(vm);
         }
 
         public IActionResult Privacy()
