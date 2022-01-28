@@ -397,3 +397,9 @@ C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\zh-Hans\Micros
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Views\WashReservation\Create.cshtml.g.cs
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Views\WashReservation\Edit.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\All.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Create.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Edit.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Info.cshtml.g.cs

@@ -22,7 +22,7 @@ namespace Avtomivka.A.Logic
             this.logServices = logServices;
         }
 
-        public async Task Create(string name, int age, 
+        public async Task<string> Create(string name, int age, 
             string image, string description)
         {
             var worker = new Worker
@@ -35,6 +35,7 @@ namespace Avtomivka.A.Logic
 
             await this.context.Workers.AddAsync(worker);
             await this.context.SaveChangesLog(logServices, _table, nameof(this.Create));
+            return worker.Id;
         }
 
         public async Task Update(string id, string name,

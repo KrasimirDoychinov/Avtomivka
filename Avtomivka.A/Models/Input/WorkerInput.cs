@@ -1,20 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using Avtomivka.A.Models.View;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Avtomivka.A.Data.Models
+namespace Avtomivka.A.Models.Input
 {
-
-    [Table(name: "Worker", Schema = "17118057")]
-    public class Worker : BaseModel
+    public class WorkerInput : BaseVM
     {
         [Required]
         public string Name { get; set; }
 
         [Required]
+        [Range(20, 70)]
         public int Age { get; set; }
 
-        public string Image { get; set; }
+        [Required]
+        public IFormFile Image { get; set; }
 
         [Required]
         public string Description { get; set; }

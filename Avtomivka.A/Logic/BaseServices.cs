@@ -24,6 +24,7 @@ namespace Avtomivka.A.Logic
             => this.context
             .Set<T>()
             .Where(x => !x.Delete)
+            .OrderByDescending(x => x.Modified_17118057)
             .ToList();
 
         public T ById(string id)

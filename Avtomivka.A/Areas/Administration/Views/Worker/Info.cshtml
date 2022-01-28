@@ -1,0 +1,15 @@
+﻿@model WorkerVM
+
+<div class="mb-3 p-3 background-admin ">
+    <div class="text-center">
+        <h5><span class="font-weight-bold "></span>@Model.Name, @Model.Age</h5>
+        <h5><span class="font-weight-bold ">Info </span>@Model.Description</h5>
+        <h5>@(Model.Taken ? "Taken" : "Free")</h5>
+        <img src="~/Images/@Model.Image" style="width: 300px; height:275px" />
+    </div>
+</div>
+
+<hr class="bg-dark" />
+<div>
+    <a class="btn btn-info" asp-area="Administration" asp-controller="Worker" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+</div>
