@@ -1,5 +1,7 @@
 ﻿@model HomePageVM
+@inject UserManager<User> userManager
 @{
+    var userId = this.userManager.GetUserAsync(this.User).Result?.Id;
     ViewData["Title"] = "Home Page";
 }
 
@@ -16,16 +18,27 @@
                 var boxClass = item.Taken ? "box-taken" : "box";
                 if (boxClass == "box")
                 {
-                    <a class="col-3 @boxClass text-decoration-none" 
+                    <a class="col-3 @boxClass text-decoration-none"
                        asp-area="" asp-controller="WashReservation" asp-action="Create" asp-route-colonId="@item.Id">
                         <h3>@item.Number</h3>
                     </a>
                 }
                 else
                 {
-                    <div class="col-3 @boxClass">
-                        <h3>@item.Number</h3>
-                    </div>
+                    boxClass = item.UserId == userId ? "box-taken-user" : "box-taken";
+                    if (boxClass == "box-taken-user")
+                    {
+                        <a class="col-3 @boxClass text-decoration-none"
+                           asp-area="" asp-controller="WashReservation" asp-action="Edit" asp-route-colonId="@item.Id">
+                            <h3>@item.Number</h3>
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="col-3 @boxClass">
+                            <h3>@item.Number</h3>
+                        </div>
+                    }
                 }
 
             }
@@ -34,18 +47,3 @@
 </div>
 
 <hr class="bg-dark" />
-<div class="row mt-5">
-    @if (Model.Sites.Count() > 0)
-    {
-
-        foreach (var item in Model.Sites)
-        {
-            <div class="col-4">
-                <h3>@item.Name</h3>
-                <h4>@item.Description</h4>
-                <h4>@item.OpenTime</h4>
-                <h4>@item.CloseTime</h4>
-            </div>
-        }
-    }
-</div>

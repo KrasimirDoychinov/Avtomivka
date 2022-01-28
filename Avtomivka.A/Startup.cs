@@ -45,7 +45,6 @@ namespace Avtomivka.A
 
             services.AddTransient<ILogServices, LogServices>();
             services.AddTransient<IProgramServices, ProgramServices>();
-            services.AddTransient<ISiteServices, SiteServices>();
             services.AddTransient<IWashReservationServices, WashReservationServices>();
             services.AddTransient<IWorkerServices, WorkerServices>();
             services.AddTransient<IColonServices, ColonServices>();

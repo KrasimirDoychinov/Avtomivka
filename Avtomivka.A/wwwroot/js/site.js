@@ -20,8 +20,6 @@ $('.worker-select').change((e) => {
             } else {
                 workerImage.hide()
             }
-
         }
-
     })
 })

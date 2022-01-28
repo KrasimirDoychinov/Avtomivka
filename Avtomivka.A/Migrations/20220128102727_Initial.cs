@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Avtomivka.A.Migrations
 {
-    public partial class test : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,23 +50,6 @@ namespace Avtomivka.A.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Colon",
-                schema: "17118057",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Number = table.Column<int>(type: "int", nullable: false),
-                    Taken = table.Column<bool>(type: "bit", nullable: false),
-                    Delete = table.Column<bool>(type: "bit", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Modified_17118057 = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Colon", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "log_17118057",
                 schema: "17118057",
                 columns: table => new
@@ -81,25 +64,6 @@ namespace Avtomivka.A.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_log_17118057", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Site",
-                schema: "17118057",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OpenTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CloseTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Delete = table.Column<bool>(type: "bit", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Modified_17118057 = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Site", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,6 +192,30 @@ namespace Avtomivka.A.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Colon",
+                schema: "17118057",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Number = table.Column<int>(type: "int", nullable: false),
+                    Taken = table.Column<bool>(type: "bit", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Delete = table.Column<bool>(type: "bit", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Modified_17118057 = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Colon", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Colon_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Program",
                 schema: "17118057",
                 columns: table => new
@@ -262,7 +250,7 @@ namespace Avtomivka.A.Migrations
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ReservationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProgramId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    SiteId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    WorkerId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Delete = table.Column<bool>(type: "bit", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Modified_17118057 = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -278,10 +266,10 @@ namespace Avtomivka.A.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_WashReservation_Site_SiteId",
-                        column: x => x.SiteId,
+                        name: "FK_WashReservation_Worker_WorkerId",
+                        column: x => x.WorkerId,
                         principalSchema: "17118057",
-                        principalTable: "Site",
+                        principalTable: "Worker",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -326,6 +314,12 @@ namespace Avtomivka.A.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Colon_UserId",
+                schema: "17118057",
+                table: "Colon",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Program_WorkerId",
                 schema: "17118057",
                 table: "Program",
@@ -338,10 +332,10 @@ namespace Avtomivka.A.Migrations
                 column: "ProgramId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WashReservation_SiteId",
+                name: "IX_WashReservation_WorkerId",
                 schema: "17118057",
                 table: "WashReservation",
-                column: "SiteId");
+                column: "WorkerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -381,10 +375,6 @@ namespace Avtomivka.A.Migrations
 
             migrationBuilder.DropTable(
                 name: "Program",
-                schema: "17118057");
-
-            migrationBuilder.DropTable(
-                name: "Site",
                 schema: "17118057");
 
             migrationBuilder.DropTable(

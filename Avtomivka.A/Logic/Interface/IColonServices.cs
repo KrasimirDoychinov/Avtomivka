@@ -12,6 +12,8 @@ namespace Avtomivka.A.Logic.Interface
 
         Task Update(string id, int number);
 
-        Task Take(string id);
+        Task Take(string id, string userId);
+
+        Task UnTake(string id);
     }
 }

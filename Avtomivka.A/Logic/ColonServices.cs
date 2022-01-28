@@ -32,13 +32,27 @@ namespace Avtomivka.A.Logic
         }
 
 
-        public async Task Take(string id)
+        public async Task Take(string id, string userId)
         {
             var colon = this.ById(id);
 
             if (colon != null)
             {
                 colon.Taken = true;
+                colon.UserId = userId;
+                colon.Modified_17118057 = DateTime.Now;
+                this.context.Colons.Update(colon);
+                await this.context.SaveChangesLog(logServices, _table, nameof(this.Update));
+            }
+        }
+
+        public async Task UnTake(string id)
+        {
+            var colon = this.ById(id);
+
+            if (colon != null)
+            {
+                colon.Taken = false;
                 colon.Modified_17118057 = DateTime.Now;
                 this.context.Colons.Update(colon);
                 await this.context.SaveChangesLog(logServices, _table, nameof(this.Update));

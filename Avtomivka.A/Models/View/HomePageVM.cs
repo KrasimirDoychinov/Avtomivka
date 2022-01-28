@@ -8,8 +8,6 @@ namespace Avtomivka.A.Models.View
 {
     public class HomePageVM : BaseVM
     {
-        public IEnumerable<Site> Sites { get; set; }
-
         public IEnumerable<Colon> Colons { get; set; }
     }
 }

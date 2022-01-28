@@ -22,8 +22,6 @@ namespace Avtomivka.A.Data
 
         public DbSet<Models.Program> Programs { get; set; }
 
-        public DbSet<Site> Sites { get; set; }
-
         public DbSet<WashReservation> WashReservations { get; set; }
 
         public DbSet<Worker> Workers { get; set; }

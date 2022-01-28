@@ -28,8 +28,7 @@ namespace Avtomivka.A.Logic
             {
                 Name = name,
                 Price = price,
-                Description = description,
-                WorkerId = workerId
+                Description = description
             };
 
             await this.context.Programs.AddAsync(program);

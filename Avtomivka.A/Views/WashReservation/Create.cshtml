@@ -1,7 +1,6 @@
 ﻿@model WashReservationInput
 
 @{
-    var sites = Model.Sites.Select(x => new SelectListItem(x.Name, x.Id));
     var programs = Model.Programs.Select(x => new SelectListItem(x.Name, x.Id));
     var workers = Model.Workers.Select(x => new SelectListItem($"{x.Name}, {x.Age}", x.Id));
 }
@@ -18,21 +17,11 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="SiteId" class="font-weight-bold text-warning"></label>
-                <label class="text-danger">*</label>
-                <select asp-for="SiteId" class="form-control bg-dark text-white border border-dark"
-                        asp-items="sites">
-                    <option value="0" selected>None</option>
-                </select>
-                <span asp-validation-for="SiteId" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
                 <label asp-for="ProgramId" class="font-weight-bold text-warning"></label>
                 <label class="text-danger">*</label>
                 <select asp-for="ProgramId" class="form-control bg-dark text-white border border-dark"
                         asp-items="programs">
-                    <option value="0" selected>None</option>
+                    <option value="" selected>None</option>
                 </select>
                 <span asp-validation-for="ProgramId" class="text-danger text-warning"></span>
             </div>
@@ -42,7 +31,7 @@
                 <label class="text-danger">*</label>
                 <select asp-for="WorkerId" class="worker-select form-control bg-dark text-white border border-dark"
                         asp-items="workers">
-                    <option value="0" selected>None</option>
+                    <option value="" selected>None</option>
                 </select>
                 <span asp-validation-for="WorkerId" class="text-danger text-warning"></span>
 

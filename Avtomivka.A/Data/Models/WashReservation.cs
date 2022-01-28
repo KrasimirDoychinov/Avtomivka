@@ -17,8 +17,8 @@ namespace Avtomivka.A.Data.Models
 
         public virtual Program Program { get; set; }
 
-        public string SiteId { get; set; }
+        public string WorkerId { get; set; }
 
-        public virtual Site Site { get; set; }
+        public virtual Worker Worker { get; set; }
     }
 }

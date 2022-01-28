@@ -9,9 +9,11 @@ namespace Avtomivka.A.Logic.Interface
     public interface IWashReservationServices : IBaseServices<WashReservation>
     {
         Task Create(string userName, DateTime reservationDate,
-            string programId, string siteId);
+            string programId, string workerId);
 
         Task Update(string id, string userName, DateTime reservationDate,
-            string programId, string siteId);
+            string programId, string workerId);
+
+
     }
 }

@@ -18,8 +18,5 @@ namespace Avtomivka.A.Data.Models
         [Required]
         public string Description { get; set; }
 
-        public string WorkerId { get; set; }
-
-        public virtual Worker Worker { get; set; }
     }
 }

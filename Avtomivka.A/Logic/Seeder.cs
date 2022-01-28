@@ -13,25 +13,9 @@ namespace Avtomivka.A.Logic
         {
             Roles(roleManager);
             Users(userManager);
-            Sites(context);
             Workers(context);
             Programs(context);
             Colons(context);
-        }
-
-        public static void Sites(ApplicationDbContext context)
-        {
-            if (context.Sites.Count() <= 0)
-            {
-                context.Sites.AddRange(new Site[]
-                {
-                    new Site {Name = "Hadji Dimitar", Description = "Hadji Dimitar description", OpenTime = new DateTime(2022, 12, 10, 8, 0, 0), CloseTime = new DateTime(2022, 12, 10, 16, 0, 0)},
-                    new Site {Name = "Drujba 1", Description = "Drujba 1 description", OpenTime = new DateTime(2022, 12, 10, 9, 0, 0), CloseTime = new DateTime(2022, 12, 10, 17, 0, 0)},
-                    new Site {Name = "Drujba 2", Description = "Drujba 2 description", OpenTime = new DateTime(2022, 12, 10, 10, 0, 0), CloseTime = new DateTime(2022, 12, 10, 18, 0, 0)},
-                });
-            }
-
-            context.SaveChanges();
         }
 
         public static void Workers(ApplicationDbContext context)
@@ -55,9 +39,9 @@ namespace Avtomivka.A.Logic
             {
                 context.Programs.AddRange(new Data.Models.Program[]
                 {
-                    new Data.Models.Program{Name = "Program1", Description = "Program1 description", Price = 20, WorkerId = "1"},
-                    new Data.Models.Program{Name = "Program2", Description = "Program2 description", Price = 30, WorkerId = "2"},
-                    new Data.Models.Program{Name = "Program3", Description = "Program3 description", Price = 40, WorkerId = "3"},
+                    new Data.Models.Program{Name = "Program1", Description = "Program1 description", Price = 20},
+                    new Data.Models.Program{Name = "Program2", Description = "Program2 description", Price = 30},
+                    new Data.Models.Program{Name = "Program3", Description = "Program3 description", Price = 40},
                 });
             }
             context.SaveChanges();

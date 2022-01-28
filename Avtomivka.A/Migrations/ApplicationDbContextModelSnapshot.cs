@@ -39,7 +39,12 @@ namespace Avtomivka.A.Migrations
                     b.Property<bool>("Taken")
                         .HasColumnType("bit");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Colon", "17118057");
                 });
@@ -105,39 +110,6 @@ namespace Avtomivka.A.Migrations
                     b.HasIndex("WorkerId");
 
                     b.ToTable("Program", "17118057");
-                });
-
-            modelBuilder.Entity("Avtomivka.A.Data.Models.Site", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CloseTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Delete")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Modified_17118057")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("OpenTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Site", "17118057");
                 });
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.User", b =>
@@ -225,18 +197,18 @@ namespace Avtomivka.A.Migrations
                     b.Property<DateTime>("ReservationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SiteId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkerId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProgramId");
 
-                    b.HasIndex("SiteId");
+                    b.HasIndex("WorkerId");
 
                     b.ToTable("WashReservation", "17118057");
                 });
@@ -409,13 +381,20 @@ namespace Avtomivka.A.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Avtomivka.A.Data.Models.Colon", b =>
+                {
+                    b.HasOne("Avtomivka.A.Data.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Avtomivka.A.Data.Models.Program", b =>
                 {
-                    b.HasOne("Avtomivka.A.Data.Models.Worker", "Worker")
+                    b.HasOne("Avtomivka.A.Data.Models.Worker", null)
                         .WithMany("Programs")
                         .HasForeignKey("WorkerId");
-
-                    b.Navigation("Worker");
                 });
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.WashReservation", b =>
@@ -424,13 +403,13 @@ namespace Avtomivka.A.Migrations
                         .WithMany()
                         .HasForeignKey("ProgramId");
 
-                    b.HasOne("Avtomivka.A.Data.Models.Site", "Site")
+                    b.HasOne("Avtomivka.A.Data.Models.Worker", "Worker")
                         .WithMany()
-                        .HasForeignKey("SiteId");
+                        .HasForeignKey("WorkerId");
 
                     b.Navigation("Program");
 
-                    b.Navigation("Site");
+                    b.Navigation("Worker");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

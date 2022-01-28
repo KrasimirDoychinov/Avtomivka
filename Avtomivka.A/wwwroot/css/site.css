@@ -5,12 +5,12 @@ img{
     height: 200px;
     width: 200px;
 }
-.box, .box-taken {
+.box, .box-taken, .box-taken-user {
     height: 150px;
     margin: 5px;
     color: white;
 }
-
+    
     .box:hover {
         transition: all .2s ease-in;
         background: gray;
@@ -24,6 +24,10 @@ img{
 
 .box-taken {
     background-color: red;
+}
+
+.box-taken-user {
+    background-color: orange;
 }
 
 a.navbar-brand {

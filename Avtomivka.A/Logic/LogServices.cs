@@ -12,6 +12,10 @@ namespace Avtomivka.A.Logic
     {
         private readonly ApplicationDbContext context;
 
+        public LogServices(ApplicationDbContext context)
+        {
+            this.context = context;
+        }
 
         public async Task Log(string table, string operation)
         {

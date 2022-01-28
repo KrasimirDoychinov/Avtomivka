@@ -10,23 +10,16 @@ namespace Avtomivka.A.Models.Input
 {
     public class WashReservationInput : BaseVM
     {
-        [Required]
-        public string UserName { get; set; }
+        public string ColonId { get; set; }
 
         [Required]
-        public DateTime ReservationDate { get; set; }
+        public DateTime ReservationDate { get; set; } = DateTime.Now;
 
         [Required]
         [Display(Name = "Program")]
         public string ProgramId { get; set; }
 
         public IEnumerable<Data.Models.Program> Programs { get; set; }
-
-        [Required]
-        [Display(Name = "Site")]
-        public string SiteId { get; set; }
-
-        public IEnumerable<Site> Sites { get; set; }
 
         [Required]
         [Display(Name = "Worker")]
