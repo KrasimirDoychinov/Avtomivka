@@ -22,14 +22,16 @@ namespace Avtomivka.A.Logic
         }
 
         public async Task Create(string userName, DateTime reservationDate, 
-            string programId, string workerId)
+            string programId, string workerId, string colonId)
         {
+
             var reservation = new WashReservation
             {
                 UserName = userName,
                 ReservationDate = reservationDate,
                 ProgramId = programId,
-                WorkerId = workerId
+                WorkerId = workerId,
+                ColonId = colonId
             };
 
             await this.context.WashReservations.AddAsync(reservation);
@@ -38,7 +40,7 @@ namespace Avtomivka.A.Logic
 
 
         public async Task Update(string id, string userName, DateTime reservationDate, 
-            string programId, string workerId)
+            string programId, string colonId)
         {
             var reservation = this.ById(id);
 
@@ -47,11 +49,16 @@ namespace Avtomivka.A.Logic
                 reservation.UserName = userName;
                 reservation.ReservationDate = reservationDate;
                 reservation.ProgramId = programId;
+                reservation.ColonId = colonId;
 
                 this.context.WashReservations.Update(reservation);
                 await this.context.SaveChangesLog(logServices, _table, nameof(this.Update));
             }
-
         }
+
+        public WashReservation ByColonId(string colonId)
+            => this.context.WashReservations
+            .FirstOrDefault(x => x.ColonId == colonId);
+
     }
 }

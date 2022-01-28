@@ -1,0 +1,41 @@
+﻿@model WashReservationEditModel
+
+@{
+    var programs = Model.Programs.Select(x => new SelectListItem(x.Name, x.Id));
+}
+
+<div class="row" id="form" data-worker-image="/Worker/GetImage">
+    <div class="col">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group ">
+                <label asp-for="ReservationDate" class="font-weight-bold text-warning"></label>
+                <label class="text-danger">*</label>
+                <input asp-for="ReservationDate" type="date" class="form-control bg-dark text-white border border-dark" />
+                <span asp-validation-for="ReservationDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProgramId" class="font-weight-bold text-warning"></label>
+                <label class="text-danger">*</label>
+                <select asp-for="ProgramId" class="form-control bg-dark text-white border border-dark"
+                        asp-items="programs">
+                    <option value="" selected>None</option>
+                </select>
+                <span asp-validation-for="ProgramId" class="text-danger text-warning"></span>
+            </div>
+
+            <hr class="bg-warning" />
+            <input type="submit" class="btn btn-warning" value="Edit" />
+
+            <a class="btn btn-danger" asp-area="" asp-controller="WashReservation" asp-action="Delete" asp-route-colonId="@Model.ColonId">Delete</a>
+        </form>
+    </div>
+
+    <div class="col">
+        <h2 class="text-info text-center">Rules</h2>
+        <h6><span class="text-info">1. </span>Please do not write <span class="text-danger">stupid things, use inappropriate images, use profanity</span> or other things that can potentially offend other users on the forum.</h6>
+        <h6><span class="text-info">2. </span>If the above rule is broken your character will be <span class="text-danger">deleted</span>.</h6>
+    </div>
+</div>

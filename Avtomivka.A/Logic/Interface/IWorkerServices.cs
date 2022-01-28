@@ -12,5 +12,9 @@ namespace Avtomivka.A.Logic.Interface
 
         Task Update(string id, string name,
             int age, string image, string description);
+
+        IEnumerable<Worker> AllNotTaken();
+
+        Task UpdateStatus(string id, bool taken);
     }
 }

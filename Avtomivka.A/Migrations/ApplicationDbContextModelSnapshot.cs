@@ -182,6 +182,9 @@ namespace Avtomivka.A.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ColonId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
@@ -205,6 +208,8 @@ namespace Avtomivka.A.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ColonId");
 
                     b.HasIndex("ProgramId");
 
@@ -240,6 +245,9 @@ namespace Avtomivka.A.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Taken")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -399,6 +407,10 @@ namespace Avtomivka.A.Migrations
 
             modelBuilder.Entity("Avtomivka.A.Data.Models.WashReservation", b =>
                 {
+                    b.HasOne("Avtomivka.A.Data.Models.Colon", "Colon")
+                        .WithMany()
+                        .HasForeignKey("ColonId");
+
                     b.HasOne("Avtomivka.A.Data.Models.Program", "Program")
                         .WithMany()
                         .HasForeignKey("ProgramId");
@@ -406,6 +418,8 @@ namespace Avtomivka.A.Migrations
                     b.HasOne("Avtomivka.A.Data.Models.Worker", "Worker")
                         .WithMany()
                         .HasForeignKey("WorkerId");
+
+                    b.Navigation("Colon");
 
                     b.Navigation("Program");
 

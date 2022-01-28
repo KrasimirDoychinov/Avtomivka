@@ -37,7 +37,7 @@ namespace Avtomivka.A.Controllers
             var vm = new WashReservationInput
             {
                 Programs = this.programServices.All(),
-                Workers = this.workerServices.All(),
+                Workers = this.workerServices.AllNotTaken(),
                 ColonId = colonId
             };
 
@@ -50,16 +50,67 @@ namespace Avtomivka.A.Controllers
             if (!ModelState.IsValid)
             {
                 input.Programs = this.programServices.All();
-                input.Workers = this.workerServices.All();
+                input.Workers = this.workerServices.AllNotTaken();
                 return this.View(input);
             }
 
             await this.colonServices.Take(input.ColonId, this._UserId);
-            await this.washReservationServices.Create(this.User.Identity.Name, input.ReservationDate, input.ProgramId, input.WorkerId);
+            await this.workerServices.UpdateStatus(input.WorkerId, true);
+            await this.washReservationServices.Create(this.User.Identity.Name, input.ReservationDate, input.ProgramId, input.WorkerId, input.ColonId);
 
             return this.Redirect("/");
         }
 
-        
+        public IActionResult Edit(string colonId, string id)
+        {
+            var reservation = this.washReservationServices.ByColonId(colonId);
+            if (reservation != null)
+            {
+                var vm = new WashReservationEditModel
+                {
+                    ColonId = colonId,
+                    ProgramId = reservation.ProgramId,
+                    ReservationDate = reservation.ReservationDate,
+                    Id = reservation.Id,
+                    Programs = this.programServices.All(),
+                };
+
+                return this.View(vm);
+            }
+
+            return this.View(new WashReservationEditModel());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(string id, WashReservationEditModel input)
+        {
+            if (!ModelState.IsValid)
+            {
+                input.Programs = this.programServices.All();
+                return this.View(input);
+            }
+
+            var washReservation = this.washReservationServices.ByColonId(input.ColonId);
+            if (washReservation != null)
+            {
+                await this.washReservationServices.Update(washReservation.Id, this.User.Identity.Name, input.ReservationDate, input.ProgramId, input.ColonId);
+            }
+
+            return this.Redirect("/");
+        }
+
+        public async Task<IActionResult> Delete(string colonId)
+        {
+            var washReservation = this.washReservationServices.ByColonId(colonId);
+            if (washReservation != null)
+            {
+                await this.colonServices.UnTake(colonId);
+                await this.workerServices.UpdateStatus(washReservation.WorkerId, false);
+                await this.washReservationServices.Delete(washReservation.Id, nameof(WashReservation));
+            }
+
+            return this.Redirect("/");
+        }
+
     }
 }

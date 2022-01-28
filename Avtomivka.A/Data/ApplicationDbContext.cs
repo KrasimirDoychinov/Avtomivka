@@ -38,5 +38,11 @@ namespace Avtomivka.A.Data
             optionsBuilder.UseLazyLoadingProxies();
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+        }
+
     }
 }

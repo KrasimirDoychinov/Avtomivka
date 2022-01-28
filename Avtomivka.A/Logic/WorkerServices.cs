@@ -55,6 +55,21 @@ namespace Avtomivka.A.Logic
             }
         }
 
-        
+        public IEnumerable<Worker> AllNotTaken()
+            => this.context.Workers
+            .Where(x => !x.Taken);
+
+        public async Task UpdateStatus(string id, bool taken)
+        {
+            var worker = this.ById(id);
+            if (worker != null)
+            {
+                worker.Taken = taken;
+                worker.Modified_17118057 = DateTime.Now;
+
+                this.context.Workers.Update(worker);
+                await this.context.SaveChangesLog(logServices, _table, nameof(this.Update));
+            }
+        }
     }
 }

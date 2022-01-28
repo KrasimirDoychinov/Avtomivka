@@ -20,5 +20,9 @@ namespace Avtomivka.A.Data.Models
         public string WorkerId { get; set; }
 
         public virtual Worker Worker { get; set; }
+
+        public string ColonId { get; set; }
+
+        public virtual Colon Colon { get; set; }
     }
 }

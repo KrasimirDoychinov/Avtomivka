@@ -20,5 +20,7 @@ namespace Avtomivka.A.Data.Models
         public string Description { get; set; }
 
         public virtual IEnumerable<Program> Programs { get; set; } = new List<Program>();
+
+        public bool Taken { get; set; }
     }
 }

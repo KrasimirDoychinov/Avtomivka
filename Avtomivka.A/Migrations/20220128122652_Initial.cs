@@ -76,6 +76,7 @@ namespace Avtomivka.A.Migrations
                     Age = table.Column<int>(type: "int", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Taken = table.Column<bool>(type: "bit", nullable: false),
                     Delete = table.Column<bool>(type: "bit", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Modified_17118057 = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -251,6 +252,7 @@ namespace Avtomivka.A.Migrations
                     ReservationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProgramId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     WorkerId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ColonId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Delete = table.Column<bool>(type: "bit", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Modified_17118057 = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -258,6 +260,13 @@ namespace Avtomivka.A.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WashReservation", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_WashReservation_Colon_ColonId",
+                        column: x => x.ColonId,
+                        principalSchema: "17118057",
+                        principalTable: "Colon",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_WashReservation_Program_ProgramId",
                         column: x => x.ProgramId,
@@ -326,6 +335,12 @@ namespace Avtomivka.A.Migrations
                 column: "WorkerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_WashReservation_ColonId",
+                schema: "17118057",
+                table: "WashReservation",
+                column: "ColonId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_WashReservation_ProgramId",
                 schema: "17118057",
                 table: "WashReservation",
@@ -356,10 +371,6 @@ namespace Avtomivka.A.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Colon",
-                schema: "17118057");
-
-            migrationBuilder.DropTable(
                 name: "log_17118057",
                 schema: "17118057");
 
@@ -371,11 +382,15 @@ namespace Avtomivka.A.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Colon",
+                schema: "17118057");
 
             migrationBuilder.DropTable(
                 name: "Program",
                 schema: "17118057");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Worker",

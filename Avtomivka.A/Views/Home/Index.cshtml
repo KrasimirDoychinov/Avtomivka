@@ -29,7 +29,7 @@
                     if (boxClass == "box-taken-user")
                     {
                         <a class="col-3 @boxClass text-decoration-none"
-                           asp-area="" asp-controller="WashReservation" asp-action="Edit" asp-route-colonId="@item.Id">
+                           asp-area="" asp-controller="WashReservation" asp-action="Edit" asp-route-colonId="@item.Id" asp-route-reservationId="@item.">
                             <h3>@item.Number</h3>
                         </a>
                     }
