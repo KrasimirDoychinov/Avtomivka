@@ -26,7 +26,9 @@ namespace Avtomivka.A.Controllers
         {
             var vm = new HomePageVM
             {
-                Colons = this.colonServices.All().OrderBy(x => x.Number)
+                Colons = this.colonServices.All()
+                .Where(x => !x.Delete)
+                .OrderBy(x => x.Number)
             };
 
             return View(vm);

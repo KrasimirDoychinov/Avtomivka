@@ -22,7 +22,13 @@
                         @if (this.User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Worker" asp-action="All">Workers</a>
+                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Worker" asp-action="Workers">Workers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Colon" asp-action="Colons">Colons</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Program" asp-action="Programs">Programs</a>
                             </li>
                         }
                     </ul>

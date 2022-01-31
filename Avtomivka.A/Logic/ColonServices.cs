@@ -28,6 +28,7 @@ namespace Avtomivka.A.Logic
             };
 
             await this.context.Colons.AddAsync(colon);
+            await this.context.SaveChangesAsync();
             await this.context.SaveChangesLog(logServices, _table, nameof(this.Create));
         }
 

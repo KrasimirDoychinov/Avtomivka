@@ -21,7 +21,7 @@ else
                     @foreach (var item in Model.Workers)
                     {
                         <tr>
-                            <td><a asp-area="Administration" asp-controller="Worker" asp-action="Info" asp-route-id="@item.Id">@item.Name</a></td>
+                            <td><a asp-area="Administration" asp-controller="Worker" asp-action="InfoWorker" asp-route-id="@item.Id">@item.Name</a></td>
                             <td>@item.Age</td>
                             <td>@item.Taken</td>
                         </tr>
@@ -32,6 +32,6 @@ else
     </div>
     <hr class="bg-dark" />
     <div>
-        <a asp-area="Administration" asp-controller="Worker" asp-action="Create" class="btn btn-success btn ml-2">Create</a>
+        <a asp-area="Administration" asp-controller="Worker" asp-action="CreateWorker" class="btn btn-success btn ml-2">Create</a>
     </div>
 }

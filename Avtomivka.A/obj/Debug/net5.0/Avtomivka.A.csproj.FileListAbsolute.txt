@@ -397,9 +397,13 @@ C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\zh-Hans\Micros
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Views\WashReservation\Create.cshtml.g.cs
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Views\WashReservation\Edit.cshtml.g.cs
-C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\All.cshtml.g.cs
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
-C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Create.cshtml.g.cs
-C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Edit.cshtml.g.cs
-C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Info.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Colon\Colons.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Program\CreateProgram.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Program\Programs.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\CreateWorker.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\EditWorker.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\InfoWorker.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Worker\Workers.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Administration\Views\Program\EditProgram.cshtml.g.cs

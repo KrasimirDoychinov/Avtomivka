@@ -8,7 +8,7 @@ namespace Avtomivka.A.Logic.Interface
     public interface IProgramServices : IBaseServices<Data.Models.Program>
     {
         Task Create(string name, double price,
-            string description, string workerId);
+            string description);
 
         Task Update(string id, string name,
             double price, string description);

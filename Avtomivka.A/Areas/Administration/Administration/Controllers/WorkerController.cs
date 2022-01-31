@@ -1,15 +1,11 @@
 ﻿using Avtomivka.A.Data;
-using Avtomivka.A.Data.Models;
 using Avtomivka.A.Logic.Interface;
 using Avtomivka.A.Models.Input;
 using Avtomivka.A.Models.View;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Avtomivka.A.Areas.Administration.Administration.Controllers
@@ -28,7 +24,7 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
             this.context = context;
         }
 
-        public IActionResult All()
+        public IActionResult Workers()
         {
             var vm = new WorkersAllVM
             {
@@ -38,13 +34,11 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
             return this.View(vm);
         }
 
-        
-
-        public IActionResult Create()
+        public IActionResult CreateWorker()
             => this.View(new WorkerInput());
 
         [HttpPost]
-        public async Task<IActionResult> Create(WorkerInput input)
+        public async Task<IActionResult> CreateWorker(WorkerInput input)
         {
             if (!ModelState.IsValid)
             {
@@ -56,8 +50,7 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
             return this.RedirectToAction("All");
         }
 
-
-        public IActionResult Info(string id)
+        public IActionResult InfoWorker(string id)
         {
             var worker = this.workerServices.ById(id);
             var vm = new WorkerVM
@@ -73,7 +66,7 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
             return this.View(vm);
         }
 
-        public IActionResult Edit(string id)
+        public IActionResult EditWorker(string id)
         {
             var worker = this.workerServices.ById(id);
             var vm = new WorkerInput
@@ -89,7 +82,7 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(WorkerInput input)
+        public async Task<IActionResult> EditWorker(WorkerInput input)
         {
             if (!ModelState.IsValid)
             {
@@ -115,7 +108,5 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 
             await this.context.SaveChangesAsync();
         }
-
-
     }
 }

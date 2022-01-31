@@ -22,7 +22,7 @@ namespace Avtomivka.A.Logic
         }
 
         public async Task Create(string name, double price, 
-            string description, string workerId)
+            string description)
         {
             var program = new Data.Models.Program
             {
