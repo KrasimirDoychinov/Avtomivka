@@ -47,7 +47,7 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 
             var id = await this.workerServices.Create(input.Name, input.Age, input.Image.FileName, input.Description);
             await this.UpdateImage(this.webHostEnvironment.WebRootPath, id, input.Image);
-            return this.RedirectToAction("All");
+            return this.RedirectToAction("Workers");
         }
 
         public IActionResult InfoWorker(string id)
@@ -91,7 +91,13 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 
             await this.workerServices.Update(input.Id, input.Name, input.Age, input.Image.FileName, input.Description);
             await this.UpdateImage(this.webHostEnvironment.WebRootPath, input.Id, input.Image);
-            return this.RedirectToAction("All");
+            return this.RedirectToAction("Workers");
+        }
+
+        public async Task<IActionResult> DeleteWorker(string id)
+        {
+            await this.workerServices.Delete(id, "Worker");
+            return this.RedirectToAction("Workers");
         }
 
         private async Task UpdateImage(string webRootPath, string id, IFormFile image)

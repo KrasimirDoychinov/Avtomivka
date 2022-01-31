@@ -29,7 +29,7 @@ namespace Avtomivka.A.Controllers
 
         public string _UserId { get { return this.userManager.GetUserAsync(this.User).Result?.Id; } }
 
-        public IActionResult Create(string colonId)
+        public IActionResult CreateReservation(string colonId)
         {
             var vm = new WashReservationInput
             {
@@ -42,7 +42,7 @@ namespace Avtomivka.A.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(WashReservationInput input)
+        public async Task<IActionResult> CreateReservation(WashReservationInput input)
         {
             if (!ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace Avtomivka.A.Controllers
             return this.Redirect("/");
         }
 
-        public IActionResult Edit(string colonId, string id)
+        public IActionResult EditReservation(string colonId, string id)
         {
             var reservation = this.washReservationServices.ByColonId(colonId);
             if (reservation != null)
@@ -70,6 +70,7 @@ namespace Avtomivka.A.Controllers
                     ReservationDate = reservation.ReservationDate,
                     Id = reservation.Id,
                     Programs = this.programServices.All(),
+                    Worker = reservation.Worker
                 };
 
                 return this.View(vm);
@@ -79,7 +80,7 @@ namespace Avtomivka.A.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, WashReservationEditModel input)
+        public async Task<IActionResult> EditReservation(string id, WashReservationEditModel input)
         {
             if (!ModelState.IsValid)
             {

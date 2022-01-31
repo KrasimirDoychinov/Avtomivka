@@ -1,4 +1,5 @@
 ﻿using Avtomivka.A.Attributes;
+using Avtomivka.A.Data.Models;
 using Avtomivka.A.Models.View;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,7 @@ namespace Avtomivka.A.Models.Input
         public string ProgramId { get; set; }
 
         public IEnumerable<Data.Models.Program> Programs { get; set; }
+
+        public Worker Worker { get; set; }
     }
 }
