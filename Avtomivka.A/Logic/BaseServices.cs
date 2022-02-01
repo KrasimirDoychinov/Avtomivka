@@ -34,7 +34,7 @@ namespace Avtomivka.A.Logic
         public T ById(string id)
             => this.context
             .Set<T>()
-            .FirstOrDefault(x => !x.Delete && x.Id == id);
+            .FirstOrDefault(x => x.Id == id);
 
         public async Task<bool> Delete(string id, string table)
         {

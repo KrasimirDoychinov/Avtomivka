@@ -28,5 +28,8 @@ namespace Avtomivka.A.Logic
             await this.context.Logs.AddAsync(log);
             await this.context.SaveChangesAsync();
         }
+
+        public IEnumerable<Log> ForExport()
+            => this.context.Logs;
     }
 }

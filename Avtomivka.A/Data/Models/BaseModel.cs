@@ -12,6 +12,5 @@ namespace Avtomivka.A.Data.Models
         public DateTime Created { get; set; } = DateTime.Now;
 
         public DateTime Modified_17118057 { get; set; } = DateTime.Now;
-
     }
 }

@@ -48,7 +48,3 @@ $('.program-select').change((e) => {
     })
 })
 
-$('.search-button').click((e) => {
-    let searchValue = $('.search-value').val()
-})
-

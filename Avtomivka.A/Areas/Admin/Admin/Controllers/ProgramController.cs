@@ -74,12 +74,5 @@ namespace Avtomivka.A.Areas.Administration.Administration.Controllers
             await this.programServices.Delete(id, "Program");
             return this.RedirectToAction("Programs");
         }
-
-        public FileStreamResult ExportPrograms()
-        {
-            var programs = this.programServices.ForExport();
-            var export = this.exportServices.Export(programs);
-            return new FileStreamResult(new MemoryStream(export), "text/csv") { FileDownloadName = "Programs.csv" };
-        }
     }
 }

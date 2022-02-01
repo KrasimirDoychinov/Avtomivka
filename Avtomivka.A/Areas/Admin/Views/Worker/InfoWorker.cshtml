@@ -8,7 +8,7 @@
         <h5 class="@(Model.Taken ? "text-danger" : "text-info")">@(Model.Taken ? "Taken" : "Free")</h5>
         <h5>@Model.Description</h5>
     </div>
-    <a class="btn btn-info" asp-area="Admin" asp-controller="Worker" asp-action="EditWorker" asp-route-id="@Model.Id">Edit</a>
-    <a class="btn btn-danger" asp-area="Admin" asp-controller="Worker" asp-action="DeleteWorker" asp-route-id="@Model.Id">Fire</a>
+    <a class="form-button btn" asp-area="Admin" asp-controller="Worker" asp-action="EditWorker" asp-route-id="@Model.Id">Edit</a>
+    <a class="form-button-danger btn" asp-area="Admin" asp-controller="Worker" asp-action="DeleteWorker" asp-route-id="@Model.Id">Fire</a>
 </div>
 

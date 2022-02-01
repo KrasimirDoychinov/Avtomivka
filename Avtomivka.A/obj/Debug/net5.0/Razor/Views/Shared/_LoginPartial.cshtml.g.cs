@@ -21,27 +21,34 @@ using Avtomivka.A;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
-using Avtomivka.A.Models;
+using Avtomivka.A.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
-using Avtomivka.A.Data.Models;
+using Avtomivka.A.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
-using Avtomivka.A.Models.View;
+using Avtomivka.A.Data.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
+using Avtomivka.A.Models.View;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
 using Avtomivka.A.Models.Input;
 
 #line default
@@ -55,7 +62,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a8bfa0c360a4d4a3f5153be291593bd4e19e3e51", @"/Views/Shared/_LoginPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ee07f39c3ddd03a30f8dbc2a0f43eb9533f299a8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7608f7c59a8e43c150f8e5ee4e3469f29f5a8dd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__LoginPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link text-light"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -102,7 +109,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e517042", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e517222", async() => {
                 WriteLiteral("Hello ");
 #nullable restore
 #line 9 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\Shared\_LoginPartial.cshtml"
@@ -130,7 +137,7 @@ using Microsoft.AspNetCore.Identity;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e518949", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e519129", async() => {
                 WriteLiteral("\r\n            <button  type=\"submit\" class=\"nav-link btn btn-link text-light\">Logout</button>\r\n        ");
             }
             );
@@ -176,7 +183,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e5112133", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e5112313", async() => {
                 WriteLiteral("Register");
             }
             );
@@ -195,7 +202,7 @@ else
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e5113624", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8bfa0c360a4d4a3f5153be291593bd4e19e3e5113804", async() => {
                 WriteLiteral("Login");
             }
             );

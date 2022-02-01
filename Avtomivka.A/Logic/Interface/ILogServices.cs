@@ -9,5 +9,7 @@ namespace Avtomivka.A.Logic.Interface
     public interface ILogServices
     {
         Task Log(string table, string operation);
+
+        IEnumerable<Log> ForExport();
     }
 }

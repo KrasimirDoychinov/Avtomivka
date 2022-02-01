@@ -47,8 +47,8 @@
 
 
             <div class="mt-2">
-                <input type="submit" class="btn btn-info" value="Save" asp-route-workerId="@Model.Worker.Id" asp-route-colonId="@Model.ColonId" />
-                <a class="btn btn-danger" asp-area="" asp-controller="WashReservation" asp-action="Delete" asp-route-colonId="@Model.ColonId">Cancel</a>
+                <input type="submit" class="form-button" value="Save" asp-route-workerId="@Model.Worker.Id" asp-route-colonId="@Model.ColonId" />
+                <a class="form-button-danger btn" asp-area="" asp-controller="WashReservation" asp-action="Delete" asp-route-colonId="@Model.ColonId">Cancel</a>
             </div>
         </form>
     </div>

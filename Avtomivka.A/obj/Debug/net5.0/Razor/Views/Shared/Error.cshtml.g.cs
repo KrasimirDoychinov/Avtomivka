@@ -21,27 +21,34 @@ using Avtomivka.A;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
-using Avtomivka.A.Models;
+using Avtomivka.A.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
-using Avtomivka.A.Data.Models;
+using Avtomivka.A.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
-using Avtomivka.A.Models.View;
+using Avtomivka.A.Data.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
+using Avtomivka.A.Models.View;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\Views\_ViewImports.cshtml"
 using Avtomivka.A.Models.Input;
 
 #line default
@@ -55,7 +62,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ee07f39c3ddd03a30f8dbc2a0f43eb9533f299a8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7608f7c59a8e43c150f8e5ee4e3469f29f5a8dd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

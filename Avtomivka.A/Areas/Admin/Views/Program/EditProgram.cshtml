@@ -14,8 +14,8 @@
         <textarea asp-for="Description" class="form-control border border-dark" rows="3"></textarea>
 
         <div class="mt-2">
-            <input type="submit" class="btn btn-success" value="Save" />
-            <a asp-area="Admin" asp-controller="Program" asp-action="DeleteProgram" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+            <input type="submit" class="form-button btn" value="Save" />
+            <a asp-area="Admin" asp-controller="Program" asp-action="DeleteProgram" asp-route-id="@Model.Id" class="form-button btn">Delete</a>
         </div>
 
     </form>

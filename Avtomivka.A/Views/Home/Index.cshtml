@@ -46,6 +46,29 @@
             }
         }
     }
-</div>
 
-<hr class="bg-dark" />
+</div>
+@if (this.User.IsInRole("Admin"))
+{
+    <hr class="bg-light" />
+    <div class="row justify-content-center text-center">
+        <form class="col-5" method="post" enctype="multipart/form-data">
+            <label asp-for="Table"></label>
+            <select asp-for="Table" class="form-control"
+                    asp-items="@Html.GetEnumSelectList<Table>()">
+            </select>
+
+            <label asp-for="OrderBy"></label>
+            <select asp-for="OrderBy" class="form-control"
+                    asp-items="@Html.GetEnumSelectList<OrderBy>()">
+            </select>
+
+            <label asp-for="Descending"></label>
+            <input asp-for="Descending" class="form-control" />
+
+            <div>
+                <input type="submit" class="mt-2 form-button" value="Export" />
+            </div>
+        </form>
+    </div>
+}
