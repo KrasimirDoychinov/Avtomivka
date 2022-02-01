@@ -1,6 +1,4 @@
-﻿
-
-namespace Avtomivka.A.Data.Models
+﻿namespace Avtomivka.A.Data.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;

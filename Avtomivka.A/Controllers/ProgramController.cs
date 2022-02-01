@@ -1,6 +1,4 @@
-﻿
-
-namespace Avtomivka.A.Controllers
+﻿namespace Avtomivka.A.Controllers
 {
     using Avtomivka.A.Logic.Interface;
     using Microsoft.AspNetCore.Mvc;

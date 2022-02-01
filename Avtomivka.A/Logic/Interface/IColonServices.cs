@@ -1,11 +1,8 @@
-﻿using Avtomivka.A.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Logic.Interface
+﻿namespace Avtomivka.A.Logic.Interface
 {
+    using Avtomivka.A.Data.Models;
+    using System.Threading.Tasks;
+
     public interface IColonServices : IBaseServices<Colon>
     {
         Task Create(int number);

@@ -1,6 +1,4 @@
-﻿
-
-namespace Avtomivka.A.Controllers
+﻿namespace Avtomivka.A.Controllers
 {
     using Avtomivka.A.Data.Models;
     using Avtomivka.A.Logic.Interface;
