@@ -1,14 +1,12 @@
-﻿using Avtomivka.A.Attributes;
-using Avtomivka.A.Data.Models;
-using Avtomivka.A.Models.View;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Models.Input
+﻿namespace Avtomivka.A.Models.Input
 {
+    using Avtomivka.A.Attributes;
+    using Avtomivka.A.Data.Models;
+    using Avtomivka.A.Models.View;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class WashReservationInput : BaseVM
     {
         public string ColonId { get; set; }

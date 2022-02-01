@@ -1,12 +1,11 @@
-﻿using Avtomivka.A.Data;
-using Avtomivka.A.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Models.View
+﻿namespace Avtomivka.A.Models.View
 {
+    using Avtomivka.A.Data;
+    using Avtomivka.A.Data.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
     public class HomePageVM : BaseVM
     {
         public Table Table { get; set; }

@@ -1,14 +1,12 @@
-﻿using Avtomivka.A.Logic.Interface;
-using Avtomivka.A.Models.Input;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 {
+    using Avtomivka.A.Logic.Interface;
+    using Avtomivka.A.Models.Input;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
+
     public class ProgramController : AdminController
     {
         private readonly IProgramServices programServices;

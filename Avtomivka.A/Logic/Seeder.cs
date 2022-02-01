@@ -1,11 +1,10 @@
-﻿using Avtomivka.A.Data;
-using Avtomivka.A.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Linq;
-
-namespace Avtomivka.A.Logic
+﻿namespace Avtomivka.A.Logic
 {
+    using Avtomivka.A.Data;
+    using Avtomivka.A.Data.Models;
+    using Microsoft.AspNetCore.Identity;
+    using System.Linq;
+
     public static class Seeder
     {
 

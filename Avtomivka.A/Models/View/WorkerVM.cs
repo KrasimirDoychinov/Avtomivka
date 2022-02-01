@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Models.View
+﻿namespace Avtomivka.A.Models.View
 {
     public class WorkerVM : BaseVM
     {

@@ -1,11 +1,10 @@
-﻿
-using Avtomivka.A.Data.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.CodeAnalysis;
-
-namespace Avtomivka.A.Data
+﻿namespace Avtomivka.A.Data
 {
+    using Avtomivka.A.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+    using System.Diagnostics.CodeAnalysis;
+
     public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
@@ -13,7 +12,7 @@ namespace Avtomivka.A.Data
 
         }
 
-        public ApplicationDbContext([NotNull] DbContextOptions options) 
+        public ApplicationDbContext([NotNull] DbContextOptions options)
             : base(options)
         {
         }

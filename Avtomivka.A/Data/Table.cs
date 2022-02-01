@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Data
+﻿namespace Avtomivka.A.Data
 {
     public enum Table
     {

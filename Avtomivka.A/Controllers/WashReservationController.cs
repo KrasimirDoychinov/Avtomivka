@@ -1,13 +1,15 @@
-﻿using Avtomivka.A.Data.Models;
-using Avtomivka.A.Logic.Interface;
-using Avtomivka.A.Models.Input;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+﻿
 
 namespace Avtomivka.A.Controllers
 {
+    using Avtomivka.A.Data.Models;
+    using Avtomivka.A.Logic.Interface;
+    using Avtomivka.A.Models.Input;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
+
     [Authorize]
     public class WashReservationController : Controller
     {

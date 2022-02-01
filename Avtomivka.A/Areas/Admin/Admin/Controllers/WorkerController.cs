@@ -1,15 +1,17 @@
-﻿using Avtomivka.A.Data;
-using Avtomivka.A.Logic.Interface;
-using Avtomivka.A.Models.Input;
-using Avtomivka.A.Models.View;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.IO;
-using System.Threading.Tasks;
+﻿
 
 namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 {
+    using Avtomivka.A.Data;
+    using Avtomivka.A.Logic.Interface;
+    using Avtomivka.A.Models.Input;
+    using Avtomivka.A.Models.View;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using System.IO;
+    using System.Threading.Tasks;
+
     public class WorkerController : AdminController
     {
         private readonly IWorkerServices workerServices;

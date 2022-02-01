@@ -1,11 +1,9 @@
-﻿using Avtomivka.A.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Logic.Interface
+﻿namespace Avtomivka.A.Logic.Interface
 {
+    using Avtomivka.A.Data.Models;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public interface IWorkerServices : IBaseServices<Worker>
     {
         Task<string> Create(string name, int age, string image, string description);

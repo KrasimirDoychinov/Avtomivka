@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Models.Input
+﻿namespace Avtomivka.A.Models.Input
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class ProgramInput
     {
         public string Id { get; set; }

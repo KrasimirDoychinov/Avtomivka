@@ -1,9 +1,8 @@
-﻿using Avtomivka.A.Models.View;
-using Microsoft.AspNetCore.Http;
-using System.ComponentModel.DataAnnotations;
-
-namespace Avtomivka.A.Models.Input
+﻿namespace Avtomivka.A.Models.Input
 {
+    using Avtomivka.A.Models.View;
+    using Microsoft.AspNetCore.Http;
+    using System.ComponentModel.DataAnnotations;
     public class WorkerInput : BaseVM
     {
         [Required]

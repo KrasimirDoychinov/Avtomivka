@@ -1,12 +1,10 @@
-﻿using Avtomivka.A.Data;
-using Avtomivka.A.Logic.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Logic
+﻿namespace Avtomivka.A.Logic
 {
+    using Avtomivka.A.Data;
+    using Avtomivka.A.Logic.Interface;
+    using System.Threading.Tasks;
+
+
     public static class ContextMethods
     {
 

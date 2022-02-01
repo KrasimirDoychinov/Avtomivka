@@ -1,12 +1,10 @@
-﻿using Avtomivka.A.Logic.Interface;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace Avtomivka.A.Controllers
 {
+    using Avtomivka.A.Logic.Interface;
+    using Microsoft.AspNetCore.Mvc;
+
     public class ProgramController : Controller
     {
         private readonly IProgramServices programServices;

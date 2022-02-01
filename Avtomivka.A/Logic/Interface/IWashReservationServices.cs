@@ -1,11 +1,9 @@
-﻿using Avtomivka.A.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Avtomivka.A.Logic.Interface
+﻿namespace Avtomivka.A.Logic.Interface
 {
+    using Avtomivka.A.Data.Models;
+    using System;
+    using System.Threading.Tasks;
+
     public interface IWashReservationServices : IBaseServices<WashReservation>
     {
         Task Create(string userId, string userName, DateTime reservationDate,

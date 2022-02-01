@@ -1,10 +1,10 @@
-﻿using Avtomivka.A.Logic.Interface;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 {
+    using Avtomivka.A.Logic.Interface;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
     public class ColonController : AdminController
     {
         private readonly IColonServices colonServices;

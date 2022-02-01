@@ -1,12 +1,12 @@
-﻿using Avtomivka.A.Logic.Interface;
-using CsvHelper;
-using CsvHelper.Configuration;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-
-namespace Avtomivka.A.Logic
+﻿namespace Avtomivka.A.Logic
 {
+    using Avtomivka.A.Logic.Interface;
+    using CsvHelper;
+    using CsvHelper.Configuration;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.IO;
+
     public class ExportServices : IExportServices
     {
         public byte[] Export<T>(IEnumerable<T> itemsToExport)

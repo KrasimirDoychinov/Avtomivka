@@ -1,20 +1,18 @@
-﻿using Avtomivka.A.Data;
-using Avtomivka.A.Data.Models;
-using Avtomivka.A.Logic.Interface;
-using Avtomivka.A.Models;
-using Avtomivka.A.Models.View;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 
 namespace Avtomivka.A.Controllers
 {
+    using Avtomivka.A.Data;
+    using Avtomivka.A.Logic.Interface;
+    using Avtomivka.A.Models;
+    using Avtomivka.A.Models.View;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
