@@ -27,6 +27,10 @@ namespace Avtomivka.A.Logic
             .OrderByDescending(x => x.Modified_17118057)
             .ToList();
 
+        public IEnumerable<T> ForExport()
+            => this.context
+            .Set<T>();
+
         public T ById(string id)
             => this.context
             .Set<T>()
@@ -45,5 +49,7 @@ namespace Avtomivka.A.Logic
 
             return false;
         }
+
+        
     }
 }

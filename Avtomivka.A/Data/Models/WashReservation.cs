@@ -10,6 +10,10 @@ namespace Avtomivka.A.Data.Models
         [Required]
         public string UserName { get; set; }
 
+        public string UserId { get; set; }
+
+        public virtual User User { get; set; }
+
         [Required]
         public DateTime ReservationDate { get; set; }
 

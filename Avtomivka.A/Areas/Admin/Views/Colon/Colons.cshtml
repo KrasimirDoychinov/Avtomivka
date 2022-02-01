@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Colon>
+
+<div>
+    <table class="table table-bordered bg-light border-info caption-top">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Taken</th>
+                <th>Modified</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var colon in Model)
+            {
+                <tr>
+                    <td>@colon.Number</td>
+                    <td>@colon.Taken</td>
+                    <td>@colon.Modified_17118057</td>
+                    <td>@colon.Created</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a asp-area="Admin" asp-controller="Colon" asp-action="CreateColon" class="btn btn-info">Create</a>

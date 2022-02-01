@@ -53,12 +53,12 @@ namespace Avtomivka.A.Controllers
 
             await this.colonServices.Take(input.ColonId, this._UserId);
             await this.workerServices.UpdateStatus(input.WorkerId, true);
-            await this.washReservationServices.Create(this.User.Identity.Name, input.ReservationDate, input.ProgramId, input.WorkerId, input.ColonId);
+            await this.washReservationServices.Create(_UserId, this.User.Identity.Name, input.ReservationDate, input.ProgramId, input.WorkerId, input.ColonId);
 
             return this.Redirect("/");
         }
 
-        public IActionResult EditReservation(string colonId, string id)
+        public IActionResult EditReservation(string colonId)
         {
             var reservation = this.washReservationServices.ByColonId(colonId);
             if (reservation != null)
@@ -66,11 +66,12 @@ namespace Avtomivka.A.Controllers
                 var vm = new WashReservationEditModel
                 {
                     ColonId = colonId,
-                    ProgramId = reservation.ProgramId,
+                    ProgramId = this.programServices.ById(reservation.ProgramId) != null ? reservation.ProgramId : null,
                     ReservationDate = reservation.ReservationDate,
                     Id = reservation.Id,
                     Programs = this.programServices.All(),
-                    Worker = reservation.Worker
+                    Worker = reservation.Worker,
+                    Description = reservation.Program.Description
                 };
 
                 return this.View(vm);
@@ -80,15 +81,16 @@ namespace Avtomivka.A.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditReservation(string id, WashReservationEditModel input)
+        public async Task<IActionResult> EditReservation(WashReservationEditModel input, string workerId, string colonId)
         {
             if (!ModelState.IsValid)
             {
+                input.Worker = this.workerServices.ById(workerId);
                 input.Programs = this.programServices.All();
                 return this.View(input);
             }
 
-            var washReservation = this.washReservationServices.ByColonId(input.ColonId);
+            var washReservation = this.washReservationServices.ByColonId(colonId);
             if (washReservation != null)
             {
                 await this.washReservationServices.Update(washReservation.Id, this.User.Identity.Name, input.ReservationDate, input.ProgramId, input.ColonId);

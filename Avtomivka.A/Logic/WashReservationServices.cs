@@ -21,7 +21,7 @@ namespace Avtomivka.A.Logic
             this.logServices = logServices;
         }
 
-        public async Task Create(string userName, DateTime reservationDate, 
+        public async Task Create(string userId, string userName, DateTime reservationDate, 
             string programId, string workerId, string colonId)
         {
 
@@ -31,7 +31,8 @@ namespace Avtomivka.A.Logic
                 ReservationDate = reservationDate,
                 ProgramId = programId,
                 WorkerId = workerId,
-                ColonId = colonId
+                ColonId = colonId,
+                UserId = userId
             };
 
             await this.context.WashReservations.AddAsync(reservation);

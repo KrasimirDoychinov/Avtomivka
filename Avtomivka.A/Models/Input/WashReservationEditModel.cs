@@ -24,5 +24,7 @@ namespace Avtomivka.A.Models.Input
         public IEnumerable<Data.Models.Program> Programs { get; set; }
 
         public Worker Worker { get; set; }
+
+        public string Description { get; set; }
     }
 }

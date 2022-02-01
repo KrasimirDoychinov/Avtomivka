@@ -8,7 +8,7 @@ namespace Avtomivka.A.Logic.Interface
 {
     public interface IWashReservationServices : IBaseServices<WashReservation>
     {
-        Task Create(string userName, DateTime reservationDate,
+        Task Create(string userId, string userName, DateTime reservationDate,
             string programId, string workerId, string colonId);
 
         Task Update(string id, string userName, DateTime reservationDate,

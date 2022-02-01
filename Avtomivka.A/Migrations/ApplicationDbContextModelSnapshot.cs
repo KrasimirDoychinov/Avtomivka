@@ -102,12 +102,7 @@ namespace Avtomivka.A.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("WorkerId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("WorkerId");
 
                     b.ToTable("Program", "17118057");
                 });
@@ -200,6 +195,9 @@ namespace Avtomivka.A.Migrations
                     b.Property<DateTime>("ReservationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -212,6 +210,8 @@ namespace Avtomivka.A.Migrations
                     b.HasIndex("ColonId");
 
                     b.HasIndex("ProgramId");
+
+                    b.HasIndex("UserId");
 
                     b.HasIndex("WorkerId");
 
@@ -398,13 +398,6 @@ namespace Avtomivka.A.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Avtomivka.A.Data.Models.Program", b =>
-                {
-                    b.HasOne("Avtomivka.A.Data.Models.Worker", null)
-                        .WithMany("Programs")
-                        .HasForeignKey("WorkerId");
-                });
-
             modelBuilder.Entity("Avtomivka.A.Data.Models.WashReservation", b =>
                 {
                     b.HasOne("Avtomivka.A.Data.Models.Colon", "Colon")
@@ -415,6 +408,10 @@ namespace Avtomivka.A.Migrations
                         .WithMany()
                         .HasForeignKey("ProgramId");
 
+                    b.HasOne("Avtomivka.A.Data.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
                     b.HasOne("Avtomivka.A.Data.Models.Worker", "Worker")
                         .WithMany()
                         .HasForeignKey("WorkerId");
@@ -422,6 +419,8 @@ namespace Avtomivka.A.Migrations
                     b.Navigation("Colon");
 
                     b.Navigation("Program");
+
+                    b.Navigation("User");
 
                     b.Navigation("Worker");
                 });
@@ -475,11 +474,6 @@ namespace Avtomivka.A.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Avtomivka.A.Data.Models.Worker", b =>
-                {
-                    b.Navigation("Programs");
                 });
 #pragma warning restore 612, 618
         }

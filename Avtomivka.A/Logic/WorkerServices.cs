@@ -58,7 +58,7 @@ namespace Avtomivka.A.Logic
 
         public IEnumerable<Worker> AllNotTaken()
             => this.context.Workers
-            .Where(x => !x.Taken);
+            .Where(x => !x.Taken && !x.Delete);
 
         public async Task UpdateStatus(string id, bool taken)
         {
