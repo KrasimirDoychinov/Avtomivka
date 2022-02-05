@@ -2,10 +2,13 @@
 {
     using Avtomivka.A.Logic.Interface;
     using Avtomivka.A.Models.Input;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
 
-    public class ProgramController : AdminController
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+    public class ProgramController : Controller
     {
         private readonly IProgramServices programServices;
         private readonly IExportServices exportServices;

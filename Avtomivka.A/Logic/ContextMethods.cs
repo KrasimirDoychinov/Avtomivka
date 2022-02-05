@@ -7,7 +7,6 @@
 
     public static class ContextMethods
     {
-
         public static async Task SaveChangesLog(this ApplicationDbContext context,
             ILogServices logServices, string table, string operation)
         {

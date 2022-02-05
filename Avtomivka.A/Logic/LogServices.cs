@@ -19,8 +19,8 @@
         {
             var log = new Log
             {
-                Table = table,
-                Operation = operation
+                Operation = operation,
+                Table = table
             };
 
             await this.context.Logs.AddAsync(log);

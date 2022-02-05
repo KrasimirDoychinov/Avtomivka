@@ -1,6 +1,13 @@
 ﻿@model IEnumerable<Avtomivka.A.Data.Models.Program>
 
 <div>
+    <div class="mb-2">
+        <input class="search-input" />
+        <select class="select-input">
+            <option value="0">Name</option>
+            <option value="1">Description</option>
+        </select>
+    </div>
     <table class="table bg-light table-bordered">
         <thead>
             <tr>
@@ -12,14 +19,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var program in Model)
             {
                 <tr>
-                    <td><a asp-area="Admin" asp-controller="Program" asp-action="EditProgram" asp-route-id="@item.Id" class="text-decoration-none">@item.Name, @item.Price lv.</a></td>
-                    <td>@(item.Description.Length >= 25 ? item.Description.Substring(0, 25) + "..." : item.Description)</td>
-                    <td>@item.Modified_17118057</td>
-                    <td>@item.Created</td>
-                    <td><a asp-area="Admin" asp-controller="Program" asp-action="DeleteProgram" asp-route-id="@item.Id" class="text-center"></a></td>
+                    <td><a asp-area="Admin" asp-controller="Program" asp-action="EditProgram" asp-route-id="@program.Id" class="text-decoration-none">@program.Name, @program.Price lv.</a></td>
+                    <td>@(program.Description.Length >= 25 ? program.Description.Substring(0, 25) + "..." : program.Description)</td>
+                    <td>@program.Modified_17118057</td>
+                    <td>@program.Created</td>
+                    <td><a asp-area="Admin" asp-controller="Program" asp-action="DeleteProgram" asp-route-id="@program.Id" class="text-center"></a></td>
                 </tr>
             }
         </tbody>

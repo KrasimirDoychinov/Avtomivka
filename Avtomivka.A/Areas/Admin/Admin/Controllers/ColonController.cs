@@ -1,9 +1,12 @@
 ﻿namespace Avtomivka.A.Areas.Administration.Administration.Controllers
 {
     using Avtomivka.A.Logic.Interface;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
-    public class ColonController : AdminController
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+    public class ColonController : Controller
     {
         private readonly IColonServices colonServices;
 

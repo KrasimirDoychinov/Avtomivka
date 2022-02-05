@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WashReservation>
+
+<div>
+    <div class="mb-2">
+        <input class="search-input" />
+        <select class="select-input">
+            <option value="0">Reserved by</option>
+            <option value="1">Date</option>
+            <option value="2">Program</option>
+            <option value="3">Worker</option>
+            <option value="4">Colon</option>
+        </select>
+    </div>
+    <table class="table bg-light table-bordered">
+        <thead>
+            <tr>
+                <th>Reserved by</th>
+                <th>Date</th>
+                <th>Program</th>
+                <th>Worker</th>
+                <th>Colon</th>
+                <th>Created</th>
+                <th>Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.UserName</td>
+                    <td>@reservation.ReservationDate</td>
+                    <td>@reservation.Program.Name</td>
+                    <td>@reservation.Worker.Name, @reservation.Worker.Age</td>
+                    <td>@reservation.Colon.Number</td>
+                    <td>@reservation.Created</td>
+                    <td>@reservation.Modified_17118057</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a asp-area="Admin" asp-controller="Program" asp-action="CreateProgram" class="form-button btn">Create</a>

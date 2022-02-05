@@ -54,6 +54,8 @@ namespace Avtomivka.A
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
         {
+            StartingData.CreateStratingData(userManager, roleManager, context);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -85,8 +87,6 @@ namespace Avtomivka.A
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-
-            Seeder.Seed(userManager, roleManager, context);
         }
     }
 }

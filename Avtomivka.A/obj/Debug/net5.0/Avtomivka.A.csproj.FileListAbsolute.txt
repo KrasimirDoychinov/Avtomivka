@@ -407,3 +407,4 @@ C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Ad
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Admin\Views\Worker\Workers.cshtml.g.cs
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\deth\source\repos\Avtomivka\Avtomivka.A\obj\Debug\net5.0\Razor\Areas\Admin\Views\WashReservation\WashReservations.cshtml.g.cs

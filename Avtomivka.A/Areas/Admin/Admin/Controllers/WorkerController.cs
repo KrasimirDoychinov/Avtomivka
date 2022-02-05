@@ -4,13 +4,16 @@
     using Avtomivka.A.Logic.Interface;
     using Avtomivka.A.Models.Input;
     using Avtomivka.A.Models.View;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using System.IO;
     using System.Threading.Tasks;
 
-    public class WorkerController : AdminController
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+    public class WorkerController : Controller
     {
         private readonly IWorkerServices workerServices;
         private readonly IWebHostEnvironment webHostEnvironment;

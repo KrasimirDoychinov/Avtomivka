@@ -5,10 +5,10 @@
     using Microsoft.AspNetCore.Identity;
     using System.Linq;
 
-    public static class Seeder
+    public static class StartingData
     {
 
-        public static void Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
+        public static void CreateStratingData(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
         {
             Roles(roleManager);
             Users(userManager);
