@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avtomivka.A.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220131135153_test")]
-    partial class test
+    [Migration("20220212153807_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
